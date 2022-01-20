@@ -1,2 +1,3 @@
 # you-are-the-legend
-Final work for programming II
+Final work for programming II.
+
