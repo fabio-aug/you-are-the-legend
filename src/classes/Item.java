@@ -1,4 +1,4 @@
-packge class;
+package classes;
 
 public class Item {
     private String name;
@@ -6,11 +6,11 @@ public class Item {
     private int damage;
     private int vitality;
 
-    public Item(String name, String description, int damege, int vitality) {
-        this.name = name,
-        this.description = description,
-        this.damege = damege = damege,
-        this.vitality = vitality,
+    public Item(String name, String description, int damage, int vitality) {
+        this.name = name;
+        this.description = description;
+        this.damage = damage;
+        this.vitality = vitality;
     }
 
     public String getName() {
