@@ -1,5 +1,3 @@
-package classes;
-
 public class Mob {
     private String name;
     private String description;
