@@ -3,18 +3,24 @@ import java.util.Set;
 
 public class Room {
     public String description;
+    private int id;
     private HashMap<String, Room> exits;
     private Enemy enemy;
 
-    public Room(String description) {
+    public Room(String description, int id) {
         this.description = description;
         exits = new HashMap<String, Room>();
+        this.id = id;
     }
 
-    public Room(String description, Enemy enemy) {
+    public Room(String description, int id, Enemy enemy) {
         this.description = description;
         exits = new HashMap<String, Room>();
         this.enemy = enemy;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public Enemy getEnemy() {

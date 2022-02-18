@@ -71,4 +71,44 @@ public class Interface {
         return reader.nextLine();
     }
 
+    public static void phrase1(String whoHit){
+        if(whoHit.equals("player")) {
+            System.out.println("phrase1#PLAYER");
+        } else {
+            System.out.println("phrase1#ENEMY");
+        }
+    }
+
+    public static void phrase2(String whoHit){
+        if(whoHit.equals("player")) {
+            System.out.println("phrase2#PLAYER");
+        } else {
+            System.out.println("phrase2#ENEMY");
+        }
+    }
+
+    public static void phrase3(String whoHit){
+        if(whoHit.equals("player")) {
+            System.out.println("phrase3#PLAYER");
+        } else {
+            System.out.println("phrase3#ENEMY");
+        }
+    }
+
+    public static void phrase4(String whoHit){
+        if(whoHit.equals("player")) {
+            System.out.println("phrase4#PLAYER");
+        } else {
+            System.out.println("phrase4#ENEMY");
+        }
+    }
+
+    public static void phrase5(String whoHit){
+        if(whoHit.equals("player")) {
+            System.out.println("phrase5#PLAYER");
+        } else {
+            System.out.println("phrase5#ENEMY");
+        }
+    }
+
 }
