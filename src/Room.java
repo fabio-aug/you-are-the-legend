@@ -2,21 +2,32 @@ import java.util.HashMap;
 import java.util.Set;
 
 public class Room {
-    public String description;
     private int id;
-    private HashMap<String, Room> exits;
+    private Item item;
     private Enemy enemy;
+    public String description;
+    private HashMap<String, Room> exits;
 
-    public Room(String description, int id) {
+    public Room(int id, String description) {
         this.description = description;
         exits = new HashMap<String, Room>();
         this.id = id;
     }
 
-    public Room(String description, int id, Enemy enemy) {
+    public Room(int id, String description, Enemy enemy) {
         this.description = description;
         exits = new HashMap<String, Room>();
         this.enemy = enemy;
+    }
+
+    public Room(int id, String description, Item item) {
+        this.description = description;
+        exits = new HashMap<String, Room>();
+        this.item = item;
+    }
+
+    public Item getItem() {
+        return item;
     }
 
     public int getId() {
@@ -31,8 +42,14 @@ public class Room {
         this.enemy = enemy;
     }
 
-    public void setExit(String direction, Room neighboor) {
-        exits.put(direction, neighboor);
+    public Item getAndUseItem() {
+        Item localItem = item;
+        item = null;
+        return localItem;
+    }
+
+    public void setExit(String direction, Room neighbor) {
+        exits.put(direction, neighbor);
     }
 
     public Room getExit(String direction) {
@@ -54,7 +71,7 @@ public class Room {
     }
 
     public String getItemDescription() {
-        return "This item is beautiful";
+        return description + "\n";
     }
 
     public String getDetailedDescription() {

@@ -42,4 +42,12 @@ public class Mob {
     public void setLife(int life) {
         this.life = life;
     }
+
+    @Override
+    public String toString() {
+        return "Name: " + name +
+                "\nDescription: " + description +
+                "\nForce: " + force +
+                "\nLife: " + life;
+    }
 }

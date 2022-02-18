@@ -13,28 +13,30 @@ public class Game {
     }
 
     private void createPlayer() {
+        Interface.welcome();
         String name = Interface.namePlayer();
-        String description = Interface.descriptionPlayer();
-        this.player = new Player(name, description, 10, 10);
+        this.player = new Player(name, 10, 10);
     }
 
     private void createRooms() {
         listRoom = new ArrayList<>();
 
+        Item teste = new Item("Vaccine","A super powerful vaccine",2,0);
+
         Room reception, aWing, pharmacy, corridorOne, bWing, stock, cWing, bathroom, corridorTwo, corridorThree, infirmary, laboratory;
 
-        reception = new Room("reception", 0);
-        aWing = new Room("aWing", 1);
-        pharmacy = new Room("pharmacy", 2);
-        corridorOne = new Room("corridorOne", 3);
-        bWing = new Room("bWing", 4);
-        stock = new Room("stock", 5);
-        cWing = new Room("cWing", 6);
-        bathroom = new Room("bathroom", 7);
-        corridorTwo = new Room("corridorTwo", 8);
-        corridorThree = new Room("corridorThree", 9);
-        infirmary = new Room("infirmary", 10);
-        laboratory = new Room("laboratory", 11);
+        reception = new Room(0, "reception");
+        aWing = new Room(1, "aWing");
+        pharmacy = new Room(2, "pharmacy", teste);
+        corridorOne = new Room(3, "corridorOne");
+        bWing = new Room(4, "bWing");
+        stock = new Room(5, "stock");
+        cWing = new Room(6, "cWing");
+        bathroom = new Room(7, "bathroom");
+        corridorTwo = new Room(8, "corridorTwo");
+        corridorThree = new Room(9, "corridorThree");
+        infirmary = new Room(10, "infirmary");
+        laboratory = new Room(11, "laboratory");
 
         reception.setExit("north", aWing);
 
@@ -81,7 +83,6 @@ public class Game {
     }
 
     public void play() {
-        Interface.welcome();
         boolean finished = false;
 
         while (!finished && (player.getLife() > 0)) {
@@ -121,7 +122,12 @@ public class Game {
             currentRoom = roomDirection;
             Interface.look(currentRoom.getDetailedDescription());
             if (checkEnemyRoom()) executeCombat();
+            if (checkItemRoom()) pickUpItem();
         }
+    }
+
+    private boolean checkEnemyRoom() {
+        return (currentRoom.getEnemy() != null);
     }
 
     private void executeCombat() {
@@ -129,11 +135,19 @@ public class Game {
         combat = Combat.execute(combat);
 
         currentRoom.setEnemy(combat.getEnemy());
-        listRoom.set(currentRoom.getId(),currentRoom);
+        listRoom.set(currentRoom.getId(), currentRoom);
         player = combat.getPlayer();
     }
 
-    private boolean checkEnemyRoom() {
-        return (currentRoom.getEnemy() != null);
+    private boolean checkItemRoom() {
+        return (currentRoom.getItem() != null);
+    }
+
+    private void pickUpItem() {
+        Item item = currentRoom.getAndUseItem();
+        player.addItem(item);
+        listRoom.set(currentRoom.getId(), currentRoom);
+        Interface.findItem(currentRoom.getDescription(), item.getName());
+        Interface.showPlayerAfterItem(player.toString());
     }
 }

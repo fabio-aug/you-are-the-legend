@@ -4,13 +4,13 @@ import java.util.Scanner;
 public class Interface {
 
     public static void welcome() {
-        System.out.println("WELCOME");
+        System.out.println(" --- WELCOME --- \n");
     }
 
     public static Scanner menu(){
         Scanner reader = new Scanner(System.in);
         System.out.println(
-                " What you want to do? \n" +
+                "What you want to do? \n" +
                 "------------------------\n" +
                 "         HELP\n" +
                 "         GO\n" +
@@ -61,13 +61,7 @@ public class Interface {
 
     public static String namePlayer() {
         Scanner reader = new Scanner(System.in);
-        System.out.println("namePlayer");
-        return reader.nextLine();
-    }
-
-    public static String descriptionPlayer() {
-        Scanner reader = new Scanner(System.in);
-        System.out.println("descriptionPlayer");
+        System.out.print("Your name: ");
         return reader.nextLine();
     }
 
@@ -111,4 +105,18 @@ public class Interface {
         }
     }
 
+    public static void findItem(String currentRoomName, String item) {
+        System.out.println(
+                "After you enter the " +
+                currentRoomName +
+                " you found the following item " + item
+        );
+    }
+
+    public static void showPlayerAfterItem(String player) {
+        System.out.println(
+            "After picking up the item, you feel a little stronger." +
+                    "\n\n~~~ Player Status ~~~~\n" + player + "\n"
+        );
+    }
 }
