@@ -4,16 +4,29 @@ import java.util.Set;
 public class Room {
     public String description;
     private HashMap<String, Room> exits;
+    private Enemy enemy;
 
     public Room(String description) {
         this.description = description;
         exits = new HashMap<String, Room>();
     }
 
+    public Room(String description, Enemy enemy) {
+        this.description = description;
+        exits = new HashMap<String, Room>();
+        this.enemy = enemy;
+    }
+
+    public Enemy getEnemy() {
+        return enemy;
+    }
+
+    public void setEnemy(Enemy enemy) {
+        this.enemy = enemy;
+    }
+
     public void setExit(String direction, Room neighboor) {
-
         exits.put(direction, neighboor);
-
     }
 
     public Room getExit(String direction) {

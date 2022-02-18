@@ -59,4 +59,16 @@ public class Interface {
         System.out.println("Thank you for playing.  Good bye.");
     }
 
+    public static String namePlayer() {
+        Scanner reader = new Scanner(System.in);
+        System.out.println("namePlayer");
+        return reader.nextLine();
+    }
+
+    public static String descriptionPlayer() {
+        Scanner reader = new Scanner(System.in);
+        System.out.println("descriptionPlayer");
+        return reader.nextLine();
+    }
+
 }

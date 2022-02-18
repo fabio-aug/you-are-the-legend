@@ -2,9 +2,17 @@ public class Game {
 
     private Parser parser;
     private Room currentRoom;
+    private Player player;
 
     public Game() {
+        createPlayer();
         createRooms();
+    }
+
+    private void createPlayer() {
+        String name = Interface.namePlayer();
+        String description = Interface.descriptionPlayer();
+        this.player = new Player(name, description, 10, 10);
     }
 
     private void createRooms() {
@@ -58,7 +66,7 @@ public class Game {
         Interface.welcome();
         boolean finished = false;
 
-        while (!finished) {
+        while (!finished && (player.getLife() > 0)) {
             parser = new Parser();
             finished = selectedCommand(parser.processCommand());
         }
@@ -67,11 +75,11 @@ public class Game {
     }
 
     private boolean selectedCommand(int option) {
-        if(option == 0) return false;
-        if(option == 1) Interface.help();
-        if(option == 2) goRoom();
-        if(option == 3) return Interface.quit();
-        if(option == 4) Interface.look(currentRoom.getDetailedDescription());
+        if (option == 0) return false;
+        if (option == 1) Interface.help();
+        if (option == 2) goRoom();
+        if (option == 3) return Interface.quit();
+        if (option == 4) Interface.look(currentRoom.getDetailedDescription());
 
         return false;
     }
@@ -91,6 +99,19 @@ public class Game {
         } else {
             currentRoom = room;
             Interface.look(currentRoom.getDetailedDescription());
+            if (checkEnemyRoom()) executeCombat();
         }
+    }
+
+    private void executeCombat(){
+        Combat combat = new Combat(player, currentRoom.getEnemy());
+        combat = Fight.execute(combat);
+
+        currentRoom.setEnemy(combat.getEnemy());
+        player = combat.getPlayer();
+    }
+
+    private boolean checkEnemyRoom() {
+        return (currentRoom.getEnemy() != null);
     }
 }
