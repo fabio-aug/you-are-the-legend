@@ -15,18 +15,23 @@ public class Game {
     private void createPlayer() {
         Interface.welcome();
         String name = Interface.namePlayer();
-        this.player = new Player(name, 10, 10);
+        this.player = new Player(name, 20, 100);
     }
 
     private void createRooms() {
         listRoom = new ArrayList<>();
 
+        //Itens
         Item teste = new Item("Vaccine","A super powerful vaccine",2,0);
+
+        //Enemy
+        Enemy enemyTest = new Enemy("Grogu", "Vai te matar de fofura", 10,30, "Digo manjubinha");
+
 
         Room reception, aWing, pharmacy, corridorOne, bWing, stock, cWing, bathroom, corridorTwo, corridorThree, infirmary, laboratory;
 
         reception = new Room(0, "reception");
-        aWing = new Room(1, "aWing");
+        aWing = new Room(1, "aWing", enemyTest);
         pharmacy = new Room(2, "pharmacy", teste);
         corridorOne = new Room(3, "corridorOne");
         bWing = new Room(4, "bWing");

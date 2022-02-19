@@ -1,8 +1,8 @@
 import java.util.Random;
 
 public class Combat {
-    private Player player;
-    private Enemy enemy;
+    private  Player player;
+    private final Enemy enemy;
 
     public Combat(Player player, Enemy enemy) {
         this.player = player;
