@@ -121,9 +121,6 @@ public class Game {
         if (roomDirection == null) {
             Interface.noDoor();
         } else {
-            for (Room room : listRoom) {
-                if (room.getId() == roomDirection.getId()) roomDirection = room;
-            }
             currentRoom = roomDirection;
             Interface.look(currentRoom.getDetailedDescription());
             if (checkEnemyRoom()) executeCombat();

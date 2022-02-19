@@ -35,8 +35,7 @@ public class Combat {
     }
 
     private static int calculateDamage(int force, int life) {
-        Random random = new Random();
-        return life - (force / random.nextInt(5) + 1); // Balancear game
+        return life - force; // Balancear game
     }
 
     private static void showMessageCombat(String whoHit) {
