@@ -28,9 +28,9 @@ public class Game {
         Item alcoholGel = new Item("alcohol gel","What a relief an alcohol gel",15,10);
 
         //Enemy
-        Enemy bolsonarista = new Enemy("Bolsonarista", "O famoso tiozão antivacina.", 15,55, "Digo manjubinha");
-        Enemy virus = new Enemy("Omicron", "The omicron is heading your way.", 30,250, "Digo manjubinha");
-        Enemy fakenews = new Enemy("FakeNews", "WhatsApp aunt attacked you. Will you believe?", 20,80, "Digo manjubinha");
+        Enemy bolsonarista = new Enemy("Bolsonarista", "O famoso tiozão antivacina.", 15,55, "type17");
+        Enemy virus = new Enemy("Omicron", "The omicron is heading your way.", 30,250, "type19");
+        Enemy fakenews = new Enemy("FakeNews", "WhatsApp aunt attacked you. Will you believe?", 20,80, "typeFake");
 
         Room exit, reception, aWing, pharmacy, corridorOne, bWing, stock, cWing, bathroom, corridorTwo, corridorThree, infirmary, laboratory;
 
