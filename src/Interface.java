@@ -4,7 +4,8 @@ import java.util.Scanner;
 public class Interface {
 
     public static void welcome() {
-        System.out.println(" --- WELCOME --- \n");
+        System.out.print(" ----Welcome to you-are-the-legend! ----\n");
+        System.out.println("---- You-are-the-legend is adventure game. ---- \n");
     }
 
     public static Scanner menu(){
@@ -50,6 +51,8 @@ public class Interface {
         System.out.println("Navigate through the rooms and use the right tools to beat him.");
         System.out.println();
         System.out.println("Access \"look\" to see the possible exits from the room.");
+        System.out.println("Use the go command to move between rooms.");
+        System.out.println("Example: \"go north\" to go to the next room.");
         System.out.println();
     }
 
