@@ -21,12 +21,23 @@ public class Combat {
         Player player = combat.getPlayer();
         Enemy enemy = combat.getEnemy();
 
-        while (player.getLife() > 0 && enemy.getLife() > 0) {
-            player.setLife(calculateDamage(enemy.getForce(), player.getLife()));// Enemy ataca
-            showMessageCombat("enemy");
+        Random random = new Random();
+        Interface.nameEnemy(enemy);
 
-            enemy.setLife(calculateDamage(player.getForce(), enemy.getLife())); // PLayer ataca
-            showMessageCombat("player");
+        while (player.getLife() > 0 && enemy.getLife() > 0) {
+            if(random.nextBoolean()){
+                player.setLife(calculateDamage(enemy.getForce(), player.getLife()));// Enemy ataca
+                showMessageCombat("enemy");
+            }
+
+            if(random.nextBoolean()){
+                enemy.setLife(calculateDamage(player.getForce(), enemy.getLife())); // PLayer ataca
+                showMessageCombat("player");
+            }
+        }
+
+        if (combat.getEnemy().getLife() <= 0 && combat.getEnemy().getName().equals("Omicron")) {
+            Interface.YouWin(player);
         }
 
         if (combat.getEnemy().getLife() <= 0) return new Combat(combat.getPlayer(), null);

@@ -65,44 +65,58 @@ public class Interface {
         return reader.nextLine();
     }
 
+    public static void nameEnemy(Enemy enemyName) {
+        System.out.println("<     -- Enemy --     >");
+        System.out.println(enemyName.toString());
+        System.out.println("<     ---     >");
+    }
+
     public static void phrase1(String whoHit){
         if(whoHit.equals("player")) {
-            System.out.println("phrase1#PLAYER");
+            System.out.println("You took one in the face");
         } else {
-            System.out.println("phrase1#ENEMY");
+            System.out.println("Enemy took one in the face");
         }
     }
 
     public static void phrase2(String whoHit){
         if(whoHit.equals("player")) {
-            System.out.println("phrase2#PLAYER");
+            System.out.println("You are not doing well");
         } else {
-            System.out.println("phrase2#ENEMY");
+            System.out.println("Enemy are not doing well");
         }
     }
 
     public static void phrase3(String whoHit){
         if(whoHit.equals("player")) {
-            System.out.println("phrase3#PLAYER");
+            System.out.println("You are worse than a stray dog");
         } else {
-            System.out.println("phrase3#ENEMY");
+            System.out.println("Enemy are worse than a stray dog");
         }
     }
 
     public static void phrase4(String whoHit){
         if(whoHit.equals("player")) {
-            System.out.println("phrase4#PLAYER");
+            System.out.println("You need to react");
         } else {
-            System.out.println("phrase4#ENEMY");
+            System.out.println("Enemy is not reacting");
         }
     }
 
     public static void phrase5(String whoHit){
         if(whoHit.equals("player")) {
-            System.out.println("phrase5#PLAYER");
+            System.out.println("Your Ki is weak");
         } else {
-            System.out.println("phrase5#ENEMY");
+            System.out.println("Enemy's Ki is weak");
         }
+    }
+
+    public static void YouWin(Player player) {
+        showPlayerAfterItem(player.toString());
+        System.out.println("<     ----     >");
+        System.out.println("  You win game  ");
+        System.out.println("<     ----     >");
+        System.exit(0);
     }
 
     public static void findItem(String currentRoomName, String item) {
@@ -117,6 +131,12 @@ public class Interface {
         System.out.println(
             "After picking up the item, you feel a little stronger." +
                     "\n\n~~~ Player Status ~~~~\n" + player + "\n"
+        );
+    }
+    public static void showPlayerAfterCombat(String player) {
+        System.out.println(
+                "After combat, you feel like this" +
+                        "\n\n~~~ Player Status ~~~~\n" + player + "\n"
         );
     }
 }
