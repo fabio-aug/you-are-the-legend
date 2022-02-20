@@ -3,13 +3,13 @@ Hello, here you will find the main information about this project! We hope you h
 
 >## 👾 About the game 👾
 > **"you are the legend"** is an adventure game where the main character *(you)*, is in a calamity situation. <br>
-<br>
+> <br>
 > The world faces and suffers for a villain invisible to anyone's eyes, the
 ***Covid-19***.
-<br>
-In this situation, where the virus gets stronger and spreads faster mainly with the constant and intense presence of denialists and fake news,
+> <br>
+> In this situation, where the virus gets stronger and spreads faster mainly with the constant and intense presence of denialists and fake news,
 you feel obliged to do your part to save the world. <br>
-<br>
+> <br>
 > Get into the hospital where the first infection occurred, explore,
 face the challenges and, in the end , face the biggest enemy of this pandemic. **Save the world.**
 
