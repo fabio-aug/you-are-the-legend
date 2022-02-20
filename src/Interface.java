@@ -45,10 +45,12 @@ public class Interface {
     }
 
     public static void help() {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        System.out.println("You are lost!!!");
+        System.out.println("You are alone inside the hospital, Try to defeat the enemy that threatens the survival of humanity on earth. ");
+        System.out.println("Navigate through the rooms and use the right tools to beat him.");
         System.out.println();
-        System.out.println("   go quit help look");
+        System.out.println("Access \"look\" to see the possible exits from the room.");
+        System.out.println();
     }
 
     public static void look(String description) {
