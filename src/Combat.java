@@ -22,7 +22,7 @@ public class Combat {
         Enemy enemy = combat.getEnemy();
 
         Random random = new Random();
-        Interface.nameEnemy(enemy);
+        Interface.nameEnemy(enemy.toString());
 
         while (player.getLife() > 0 && enemy.getLife() > 0) {
             if(random.nextBoolean()){
@@ -37,7 +37,7 @@ public class Combat {
         }
 
         if (combat.getEnemy().getLife() <= 0 && combat.getEnemy().getName().equals("Omicron")) {
-            Interface.YouWin(player);
+            Interface.YouWin(player.toString());
         }
 
         if (combat.getEnemy().getLife() <= 0) return new Combat(combat.getPlayer(), null);

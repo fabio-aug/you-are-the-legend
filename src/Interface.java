@@ -70,9 +70,9 @@ public class Interface {
         return reader.nextLine();
     }
 
-    public static void nameEnemy(Enemy enemyName) {
+    public static void nameEnemy(String enemyDetails) {
         System.out.println("<     -- Enemy --     >");
-        System.out.println(enemyName.toString());
+        System.out.println(enemyDetails);
         System.out.println("<     ---     >");
     }
 
@@ -116,8 +116,8 @@ public class Interface {
         }
     }
 
-    public static void YouWin(Player player) {
-        showPlayerAfterItem(player.toString());
+    public static void YouWin(String player) {
+        showPlayerAfterItem(player);
         System.out.println("<     ----     >");
         System.out.println("  You win game  ");
         System.out.println("<     ----     >");
