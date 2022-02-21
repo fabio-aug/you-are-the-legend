@@ -8,19 +8,18 @@ public class Interface {
         System.out.println("---- You are the legend is adventure game. ---- \n");
     }
 
-    public static Scanner menu(){
+    public static Scanner menu() {
         Scanner reader = new Scanner(System.in);
         System.out.println(
                 "\nWhat you want to do? \n" +
-                "------------------------\n" +
-                "         HELP\n" +
-                "         GO\n" +
-                "         LOOK\n" +
-                "------------------------\n" +
-                "         QUIT\n" +
-                "------------------------"
+                        "------------------------\n" +
+                        "         HELP\n" +
+                        "         GO\n" +
+                        "         LOOK\n" +
+                        "------------------------\n" +
+                        "         QUIT\n" +
+                        "------------------------"
         );
-
         return new Scanner(reader.nextLine());
     }
 
@@ -63,6 +62,7 @@ public class Interface {
 
     public static void thanks() {
         System.out.println("Thank you for playing.  Good bye.");
+        System.exit(0);
     }
 
     public static String namePlayer() {
@@ -72,77 +72,93 @@ public class Interface {
     }
 
     public static void nameEnemy(String enemyDetails) {
-        System.out.println("<     -- Enemy --     >");
+        System.out.println("\n~~~ Enemy ~~~");
         System.out.println(enemyDetails);
-        System.out.println("<     ---     >");
+        System.out.println("~~~~~~~~~~~~~\n");
     }
 
-    public static void phrase1(String whoHit){
-        if(whoHit.equals("player")) {
-            System.out.println("You took one in the face");
+    public static void phrase1(String whoHit) {
+        if (whoHit.equals("player")) {
+            System.out.println("⚔️You took one in the face");
         } else {
-            System.out.println("Enemy took one in the face");
+            System.out.println("⚔️Enemy took one in the face");
         }
     }
 
-    public static void phrase2(String whoHit){
-        if(whoHit.equals("player")) {
-            System.out.println("You are not doing well");
+    public static void phrase2(String whoHit) {
+        if (whoHit.equals("player")) {
+            System.out.println("⚔️You are not doing well");
         } else {
-            System.out.println("Enemy are not doing well");
+            System.out.println("⚔️Enemy are not doing well");
         }
     }
 
-    public static void phrase3(String whoHit){
-        if(whoHit.equals("player")) {
-            System.out.println("You are worse than a stray dog");
+    public static void phrase3(String whoHit) {
+        if (whoHit.equals("player")) {
+            System.out.println("⚔️You are worse than a stray dog");
         } else {
-            System.out.println("Enemy are worse than a stray dog");
+            System.out.println("⚔️Enemy are worse than a stray dog");
         }
     }
 
-    public static void phrase4(String whoHit){
-        if(whoHit.equals("player")) {
-            System.out.println("You need to react");
+    public static void phrase4(String whoHit) {
+        if (whoHit.equals("player")) {
+            System.out.println("⚔️You need to react");
         } else {
-            System.out.println("Enemy is not reacting");
+            System.out.println("⚔️Enemy is not reacting");
         }
     }
 
-    public static void phrase5(String whoHit){
-        if(whoHit.equals("player")) {
-            System.out.println("Your Ki is weak");
+    public static void phrase5(String whoHit) {
+        if (whoHit.equals("player")) {
+            System.out.println("⚔️Your Ki is weak");
         } else {
-            System.out.println("Enemy's Ki is weak");
+            System.out.println("⚔️Enemy's Ki is weak");
         }
     }
 
-    public static void YouWin(String player) {
+    public static void youWin(String player) {
         showPlayerAfterItem(player);
-        System.out.println("<     ----     >");
-        System.out.println("  You win game  ");
-        System.out.println("<     ----     >");
-        System.exit(0);
+        System.out.print("\n✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨");
+        System.out.print("\n✨ Congratulations! You beat Covid! ✨\n");
+        System.out.print("✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨\n\n");
+        thanks();
+    }
+
+    public static void youLose() {
+        System.out.print("\n\uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80");
+        System.out.print("\n\uD83D\uDC80 You lose the game! \uD83D\uDC80\n");
+        System.out.print("\uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80\n");
+        thanks();
     }
 
     public static void findItem(String currentRoomName, String item) {
         System.out.println(
                 "\nAfter you enter the " +
-                currentRoomName +
-                " you found the following item " + item
+                        currentRoomName +
+                        " you found the following item " + item
         );
     }
 
     public static void showPlayerAfterItem(String player) {
         System.out.println(
-            "After picking up the item, you feel a little stronger." +
-                    "\n\n~~~ Player Status ~~~~\n" + player
+                "After picking up the item, you feel a little stronger." +
+                        "\n\n~~~ Player Status ~~~~\n" + player
         );
     }
+
     public static void showPlayerAfterCombat(String player) {
         System.out.println(
-                "After combat, you feel like this" +
+                "\nAfter combat, you feel like this:" +
                         "\n\n~~~ Player Status ~~~~\n" + player + "\n"
         );
+    }
+
+    public static void missAttack(boolean isPlayer) {
+        if (isPlayer) {
+            System.out.println("\uD83D\uDEE1️️You missed the attack");
+        } else {
+            System.out.println("\uD83D\uDEE1️️The enemy missed the attack");
+        }
     }
 }

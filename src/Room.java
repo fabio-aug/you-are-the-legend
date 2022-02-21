@@ -4,7 +4,7 @@ import java.util.Set;
 public class Room {
     private final int id;
     private Item item;
-    private Enemy enemy;
+    private Mob enemy;
     private String roomName;
     private String description;
     private HashMap<String, Room> exits;
@@ -16,7 +16,7 @@ public class Room {
         exits = new HashMap<>();
     }
 
-    public Room(int id, String roomName, String description, Enemy enemy) {
+    public Room(int id, String roomName, String description, Mob enemy) {
         this.id = id;
         this.roomName = roomName;
         this.description = description;
@@ -40,11 +40,11 @@ public class Room {
         return id;
     }
 
-    public Enemy getEnemy() {
+    public Mob getEnemy() {
         return enemy;
     }
 
-    public void setEnemy(Enemy enemy) {
+    public void setEnemy(Mob enemy) {
         this.enemy = enemy;
     }
 

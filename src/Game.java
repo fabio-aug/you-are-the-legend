@@ -15,22 +15,20 @@ public class Game {
     private void createPlayer() {
         Interface.welcome();
         String name = Interface.namePlayer();
-        this.player = new Player(name, 20, 80);
+        this.player = new Player(name, 25, 100);
     }
 
     private void createRooms() {
         listRoom = new ArrayList<>();
 
-        //Itens
-        Item mask = new Item("Mask", "With the mask you feel safer", 10, 20);
-        Item vaccineFirstDose = new Item("Vaccine first dose", "A super powerful first dose of vaccine", 20, 30);
+        Item mask = new Item("Mask \uD83D\uDC89", "With the mask you feel safer", 10, 20);
+        Item vaccineFirstDose = new Item("Vaccine first dose ", "A super powerful first dose of vaccine", 20, 30);
         Item vaccineSecondDose = new Item("Vaccine second dose", "A super powerful second dose of vaccine", 25, 35);
         Item alcoholGel = new Item("Alcohol gel", "What a relief an alcohol gel", 15, 10);
 
-        //Enemy
-        Enemy bolsonarista = new Enemy("Bolsonarista", "The famous anti-vaccine uncle.", 15, 55, "type17");
-        Enemy virus = new Enemy("Omicron", "The omicron is heading your way.", 30, 250, "type19");
-        Enemy fakeNews = new Enemy("FakeNews", "WhatsApp aunt attacked you. Will you believe?", 20, 80, "typeFake");
+        Mob bolsonarista = new Mob("Bolsonarista 1️⃣7️⃣", "The famous anti-vaccine uncle.", 15, 55);
+        Mob virus = new Mob("Omicron \uD83E\uDDA0", "The omicron is heading your way.", 20, 200);
+        Mob fakeNews = new Mob("FakeNews \uD83D\uDCE8", "WhatsApp aunt attacked you. Will you believe?", 20, 80);
 
         Room exit, reception, aWing, pharmacy, corridorOne, bWing, stock, cWing, bathroom, corridorTwo, corridorThree, infirmary, laboratory;
 
@@ -106,8 +104,6 @@ public class Game {
             parser = new Parser();
             finished = selectedCommand(parser.processCommand());
         }
-
-        Interface.thanks();
     }
 
     private boolean selectedCommand(int option) {
