@@ -38,14 +38,14 @@ public class Game {
         aWing = new Room(1, "AWing", "This is the hospital's A-wing.");
         pharmacy = new Room(2, "Pharmacy", "This is the pharmacy of the hospital. Here are all the medicines.", mask);
         corridorOne = new Room(3, "CorridorOne", "This is corridor one of the hospital.", bolsonarista);
-        bWing = new Room(4, "BWing", "Ward that was intended for patients with internal fractures.");
-        stock = new Room(5, "Stock", "Room where medical supplies were stored.", vaccineFirstDose);
-        cWing = new Room(6, "CWing", "Ward that was intended for patients with contagious diseases.", fakeNews);
-        bathroom = new Room(7, "Bathroom", "Hospital main abandoned toilet.", alcoholGel);
+        bWing = new Room(4, "BWing", "This is the ward that was intended for patients with internal fractures.");
+        stock = new Room(5, "Stock", "This is the room where medical supplies were stored.", vaccineFirstDose);
+        cWing = new Room(6, "CWing", "This is the ward that was intended for patients with contagious diseases.", fakeNews);
+        bathroom = new Room(7, "Bathroom", "This is the hospital main abandoned toilet.", alcoholGel);
         corridorTwo = new Room(8, "CorridorTwo", "This is corridor 2 of the hospital, a long, narrow place, a little dark, but nothing unusual.");
         corridorThree = new Room(9, "CorridorThree", "This is corridor 3, the last corridor of the hospital, you feel something when you enter it, but nothing happens.");
         infirmary = new Room(10, "Infirmary", "This is the hospital ward. Here are all the strongest medications in the hospital.", vaccineSecondDose);
-        laboratory = new Room(11, "Laboratory", "Abandoned laboratory where doctors performed tests.", virus);
+        laboratory = new Room(11, "Laboratory", "This is the abandoned laboratory where doctors performed tests.", virus);
         exit = new Room(12, "Exit", "");
 
         reception.setExit("north", aWing);
