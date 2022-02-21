@@ -29,7 +29,8 @@ public class Interface {
     }
 
     public static void goWhere() {
-        System.out.println("Go where?");
+        System.out.println("Go ... where?");
+        System.out.println("You have to write go + the direction that you wanna go.");
     }
 
     public static void noDoor() {
