@@ -22,31 +22,31 @@ public class Game {
         listRoom = new ArrayList<>();
 
         //Itens
-        Item mask = new Item("Mask","With the mask you feel safer",10,20);
-        Item vaccineFirstDose = new Item("Vaccine first dose","A super powerful first dose of vaccine",20,30);
-        Item vaccineSecondDose = new Item("Vaccine second dose","A super powerful second dose of vaccine",25,35);
-        Item alcoholGel = new Item("alcohol gel","What a relief an alcohol gel",15,10);
+        Item mask = new Item("Mask", "With the mask you feel safer", 10, 20);
+        Item vaccineFirstDose = new Item("Vaccine first dose", "A super powerful first dose of vaccine", 20, 30);
+        Item vaccineSecondDose = new Item("Vaccine second dose", "A super powerful second dose of vaccine", 25, 35);
+        Item alcoholGel = new Item("alcohol gel", "What a relief an alcohol gel", 15, 10);
 
         //Enemy
-        Enemy bolsonarista = new Enemy("Bolsonarista", "O famoso tiozão antivacina.", 15,55, "type17");
-        Enemy virus = new Enemy("Omicron", "The omicron is heading your way.", 30,250, "type19");
-        Enemy fakenews = new Enemy("FakeNews", "WhatsApp aunt attacked you. Will you believe?", 20,80, "typeFake");
+        Enemy bolsonarista = new Enemy("Bolsonarista", "O famoso tio anti-vacina.", 15, 55, "type17");
+        Enemy virus = new Enemy("Omicron", "The omicron is heading your way.", 30, 250, "type19");
+        Enemy fakeNews = new Enemy("FakeNews", "WhatsApp aunt attacked you. Will you believe?", 20, 80, "typeFake");
 
         Room exit, reception, aWing, pharmacy, corridorOne, bWing, stock, cWing, bathroom, corridorTwo, corridorThree, infirmary, laboratory;
 
-        reception = new Room(0, "reception");
-        aWing = new Room(1, "aWing");
-        pharmacy = new Room(2, "pharmacy", mask);
-        corridorOne = new Room(3, "corridorOne",bolsonarista);
-        bWing = new Room(4, "bWing");
-        stock = new Room(5, "stock",vaccineFirstDose);
-        cWing = new Room(6, "cWing",fakenews);
-        bathroom = new Room(7, "bathroom",alcoholGel);
-        corridorTwo = new Room(8, "corridorTwo");
-        corridorThree = new Room(9, "corridorThree");
-        infirmary = new Room(10, "infirmary",vaccineSecondDose);
-        laboratory = new Room(11, "laboratory",virus);
-        exit = new Room(12, "Exit");
+        reception = new Room(0, "Reception", "teste");
+        aWing = new Room(1, "AWing", "");
+        pharmacy = new Room(2, "Pharmacy", "", mask);
+        corridorOne = new Room(3, "CorridorOne", "", bolsonarista);
+        bWing = new Room(4, "BWing", "");
+        stock = new Room(5, "Stock", "", vaccineFirstDose);
+        cWing = new Room(6, "CWing", "", fakeNews);
+        bathroom = new Room(7, "Bathroom", "", alcoholGel);
+        corridorTwo = new Room(8, "CorridorTwo", "");
+        corridorThree = new Room(9, "CorridorThree", "");
+        infirmary = new Room(10, "Infirmary", "", vaccineSecondDose);
+        laboratory = new Room(11, "Laboratory", "", virus);
+        exit = new Room(12, "Exit", "");
 
         reception.setExit("north", aWing);
 
@@ -164,5 +164,10 @@ public class Game {
         listRoom.set(currentRoom.getId(), currentRoom);
         Interface.findItem(currentRoom.getDescription(), item.getName());
         Interface.showPlayerAfterItem(player.toString());
+    }
+
+    public static void main(String[] args) {
+        Game gamePlay = new Game();
+        gamePlay.play();
     }
 }

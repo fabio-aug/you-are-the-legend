@@ -11,7 +11,7 @@ public class Interface {
     public static Scanner menu(){
         Scanner reader = new Scanner(System.in);
         System.out.println(
-                "What you want to do? \n" +
+                "\nWhat you want to do? \n" +
                 "------------------------\n" +
                 "         HELP\n" +
                 "         GO\n" +
@@ -135,7 +135,7 @@ public class Interface {
     public static void showPlayerAfterItem(String player) {
         System.out.println(
             "After picking up the item, you feel a little stronger." +
-                    "\n\n~~~ Player Status ~~~~\n" + player + "\n"
+                    "\n\n~~~ Player Status ~~~~\n" + player
         );
     }
     public static void showPlayerAfterCombat(String player) {

@@ -2,28 +2,34 @@ import java.util.HashMap;
 import java.util.Set;
 
 public class Room {
-    private int id;
+    private final int id;
     private Item item;
     private Enemy enemy;
-    public String description;
+    private String roomName;
+    private String description;
     private HashMap<String, Room> exits;
 
-    public Room(int id, String description) {
-        this.description = description;
-        exits = new HashMap<String, Room>();
+    public Room(int id, String roomName, String description) {
         this.id = id;
+        this.roomName = roomName;
+        this.description = description;
+        exits = new HashMap<>();
     }
 
-    public Room(int id, String description, Enemy enemy) {
+    public Room(int id, String roomName, String description, Enemy enemy) {
+        this.id = id;
+        this.roomName = roomName;
         this.description = description;
-        exits = new HashMap<String, Room>();
         this.enemy = enemy;
+        exits = new HashMap<>();
     }
 
-    public Room(int id, String description, Item item) {
+    public Room(int id, String roomName, String description, Item item) {
+        this.id = id;
+        this.roomName = roomName;
         this.description = description;
-        exits = new HashMap<String, Room>();
         this.item = item;
+        exits = new HashMap<>();
     }
 
     public Item getItem() {
@@ -57,26 +63,22 @@ public class Room {
     }
 
     public String getExitsDescription() {
-        String exitsDescription = "Exits: ";
+        StringBuilder exitsDescription = new StringBuilder("Exits:");
 
         Set<String> directions = exits.keySet();
         for (String exit : directions) {
-            exitsDescription += " " + exit;
+            exitsDescription.append(" ").append(exit);
         }
-        return exitsDescription;
+        return exitsDescription.toString();
     }
 
     public String getDescription() {
         return description;
     }
 
-    public String getItemDescription() {
-        return description + "\n";
-    }
-
     public String getDetailedDescription() {
         String detailedDescription;
-        detailedDescription = "You are " + description + "\n" + getExitsDescription() + "\n" + getItemDescription();
+        detailedDescription = "You are " + roomName + "\n" + description + "\n" + getExitsDescription();
         return detailedDescription;
     }
 

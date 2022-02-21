@@ -30,18 +30,17 @@ public class Parser {
         Command command = getCommand();
         String commandWord = command.getCommandWord();
 
-        switch (commandWord.toUpperCase(Locale.ROOT)) {
-            case "HELP":
-                return 1;
-            case "GO":
-                return 2;
-            case "QUIT":
-                return 3;
-            case "LOOK":
-                return 4;
-            default:
-                Interface.invalidWord();
-                return 0;
+        try {
+            commandWord = commandWord.toUpperCase(Locale.ROOT);
+            if(commandWord.equals("HELP")) return 1;
+            if(commandWord.equals("GO")) return 2;
+            if(commandWord.equals("QUIT")) return 3;
+            if(commandWord.equals("LOOK")) return 4;
+            Interface.invalidWord();
+            return 0;
+        } catch (Exception ex) {
+            Interface.invalidWord();
+            return 0;
         }
     }
 }

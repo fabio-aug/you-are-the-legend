@@ -1,15 +1,11 @@
 import java.util.ArrayList;
 
 public class Player extends Mob {
-    private ArrayList<Item> items;
+    private final ArrayList<Item> items;
 
     public Player(String name, int force, int life) {
         super(name, (name + ", the hero of this adventure"), force, life);
         this.items = new ArrayList<>();
-    }
-
-    public ArrayList<Item> getItems() {
-        return items;
     }
 
     public void addItem(Item item) {
@@ -19,11 +15,11 @@ public class Player extends Mob {
     }
 
     private String returnItens() {
-        String itemsString = "";
+        StringBuilder itemsString = new StringBuilder();
         for (Item item : items) {
-            itemsString += "[" + item.getName() + "] ";
+            itemsString.append("[").append(item.getName()).append("] ");
         }
-        return itemsString;
+        return itemsString.toString();
     }
 
     @Override

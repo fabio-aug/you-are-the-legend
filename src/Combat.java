@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Combat {
-    private  Player player;
+    private Player player;
     private final Enemy enemy;
 
     public Combat(Player player, Enemy enemy) {
@@ -52,24 +52,11 @@ public class Combat {
     private static void showMessageCombat(String whoHit) {
         Random random = new Random();
         int rand = random.nextInt(5) + 1;
-        switch (rand) {
-            case 1:
-                Interface.phrase1(whoHit);
-                break;
-            case 2:
-                Interface.phrase2(whoHit);
-                break;
-            case 3:
-                Interface.phrase3(whoHit);
-                break;
-            case 4:
-                Interface.phrase4(whoHit);
-                break;
-            case 5:
-                Interface.phrase5(whoHit);
-                break;
-            default:
-                break;
-        }
+
+        if (rand == 1) Interface.phrase1(whoHit);
+        if (rand == 2) Interface.phrase2(whoHit);
+        if (rand == 3) Interface.phrase3(whoHit);
+        if (rand == 4) Interface.phrase4(whoHit);
+        if (rand == 5) Interface.phrase5(whoHit);
     }
 }
