@@ -9,7 +9,9 @@ public class Game {
 
     public Game() {
         createPlayer();
-        createRooms();
+        ArrayList<Item> listItem = createItems();
+        ArrayList<Mob> listEnemy = createEnemy();
+        createRooms(listItem, listEnemy);
     }
 
     private void createPlayer() {
@@ -18,32 +20,44 @@ public class Game {
         this.player = new Player(name, 25, 100);
     }
 
-    private void createRooms() {
+    private ArrayList<Item> createItems() {
+        ArrayList<Item> items = new ArrayList<>();
+
+        items.add(new Item("Mask", "With the mask you feel safer", 10, 20));
+        items.add(new Item("Vaccine first dose", "A super powerful first dose of vaccine", 20, 30));
+        items.add(new Item("Vaccine second dose", "A super powerful second dose of vaccine", 25, 35));
+        items.add(new Item("Alcohol gel", "What a relief an alcohol gel", 15, 10));
+
+        return items;
+    }
+
+    private ArrayList<Mob> createEnemy() {
+        ArrayList<Mob> items = new ArrayList<>();
+
+        items.add(new Mob("Bolsonarista", "The famous anti-vaccine uncle.", 15, 55));
+        items.add(new Mob("Omicron", "The omicron is heading your way.", 30, 250));
+        items.add(new Mob("FakeNews", "WhatsApp aunt attacked you. Will you believe?", 20, 80));
+
+        return items;
+    }
+
+    private void createRooms(ArrayList<Item> items, ArrayList<Mob> enemys) {
         listRoom = new ArrayList<>();
-
-        Item mask = new Item("Mask \uD83D\uDC89", "With the mask you feel safer", 10, 20);
-        Item vaccineFirstDose = new Item("Vaccine first dose ", "A super powerful first dose of vaccine", 20, 30);
-        Item vaccineSecondDose = new Item("Vaccine second dose", "A super powerful second dose of vaccine", 25, 35);
-        Item alcoholGel = new Item("Alcohol gel", "What a relief an alcohol gel", 15, 10);
-
-        Mob bolsonarista = new Mob("Bolsonarista 1️⃣7️⃣", "The famous anti-vaccine uncle.", 15, 55);
-        Mob virus = new Mob("Omicron \uD83E\uDDA0", "The omicron is heading your way.", 20, 200);
-        Mob fakeNews = new Mob("FakeNews \uD83D\uDCE8", "WhatsApp aunt attacked you. Will you believe?", 20, 80);
 
         Room exit, reception, aWing, pharmacy, corridorOne, bWing, stock, cWing, bathroom, corridorTwo, corridorThree, infirmary, laboratory;
 
         reception = new Room(0, "Reception", "This is the reception area of the hospital. It is the first room in the building.");
         aWing = new Room(1, "AWing", "This is the hospital's A-wing.");
-        pharmacy = new Room(2, "Pharmacy", "This is the pharmacy of the hospital. Here are all the medicines.", mask);
-        corridorOne = new Room(3, "CorridorOne", "This is corridor one of the hospital.", bolsonarista);
-        bWing = new Room(4, "BWing", "This is the ward that was intended for patients with internal fractures.");
-        stock = new Room(5, "Stock", "This is the room where medical supplies were stored.", vaccineFirstDose);
-        cWing = new Room(6, "CWing", "This is the ward that was intended for patients with contagious diseases.", fakeNews);
-        bathroom = new Room(7, "Bathroom", "This is the hospital main abandoned toilet.", alcoholGel);
+        pharmacy = new Room(2, "Pharmacy", "This is the pharmacy of the hospital. Here are all the medicines.", items.get(0));
+        corridorOne = new Room(3, "CorridorOne", "This is corridor one of the hospital.", enemys.get(0));
+        bWing = new Room(4, "BWing", "Ward that was intended for patients with internal fractures.");
+        stock = new Room(5, "Stock", "Room where medical supplies were stored.", items.get(1));
+        cWing = new Room(6, "CWing", "Ward that was intended for patients with contagious diseases.", enemys.get(1));
+        bathroom = new Room(7, "Bathroom", "Hospital main abandoned toilet.", items.get(2));
         corridorTwo = new Room(8, "CorridorTwo", "This is corridor 2 of the hospital, a long, narrow place, a little dark, but nothing unusual.");
         corridorThree = new Room(9, "CorridorThree", "This is corridor 3, the last corridor of the hospital, you feel something when you enter it, but nothing happens.");
-        infirmary = new Room(10, "Infirmary", "This is the hospital ward. Here are all the strongest medications in the hospital.", vaccineSecondDose);
-        laboratory = new Room(11, "Laboratory", "This is the abandoned laboratory where doctors performed tests.", virus);
+        infirmary = new Room(10, "Infirmary", "This is the hospital ward. Here are all the strongest medications in the hospital.", items.get(3));
+        laboratory = new Room(11, "Laboratory", "Abandoned laboratory where doctors performed tests.", enemys.get(2));
         exit = new Room(12, "Exit", "");
 
         reception.setExit("north", aWing);

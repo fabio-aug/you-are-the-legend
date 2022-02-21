@@ -111,9 +111,9 @@ public class Interface {
 
     public static void phrase5(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("⚔️Your Ki is weak");
+            System.out.println("⚔️Your Kee is weak");
         } else {
-            System.out.println("⚔️Enemy's Ki is weak");
+            System.out.println("⚔️Enemy's Kee is weak");
         }
     }
 
