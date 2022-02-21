@@ -78,7 +78,7 @@ public class Room {
 
     public String getDetailedDescription() {
         String detailedDescription;
-        detailedDescription = "You are " + roomName + "\n" + description + "\n" + getExitsDescription();
+        detailedDescription = "\nYou are " + roomName + "\n" + description + "\n" + getExitsDescription() + "\n";
         return detailedDescription;
     }
 

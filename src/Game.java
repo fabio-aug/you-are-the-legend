@@ -25,27 +25,27 @@ public class Game {
         Item mask = new Item("Mask", "With the mask you feel safer", 10, 20);
         Item vaccineFirstDose = new Item("Vaccine first dose", "A super powerful first dose of vaccine", 20, 30);
         Item vaccineSecondDose = new Item("Vaccine second dose", "A super powerful second dose of vaccine", 25, 35);
-        Item alcoholGel = new Item("alcohol gel", "What a relief an alcohol gel", 15, 10);
+        Item alcoholGel = new Item("Alcohol gel", "What a relief an alcohol gel", 15, 10);
 
         //Enemy
-        Enemy bolsonarista = new Enemy("Bolsonarista", "O famoso tio anti-vacina.", 15, 55, "type17");
+        Enemy bolsonarista = new Enemy("Bolsonarista", "The famous anti-vaccine uncle.", 15, 55, "type17");
         Enemy virus = new Enemy("Omicron", "The omicron is heading your way.", 30, 250, "type19");
         Enemy fakeNews = new Enemy("FakeNews", "WhatsApp aunt attacked you. Will you believe?", 20, 80, "typeFake");
 
         Room exit, reception, aWing, pharmacy, corridorOne, bWing, stock, cWing, bathroom, corridorTwo, corridorThree, infirmary, laboratory;
 
-        reception = new Room(0, "Reception", "teste");
-        aWing = new Room(1, "AWing", "");
-        pharmacy = new Room(2, "Pharmacy", "", mask);
-        corridorOne = new Room(3, "CorridorOne", "", bolsonarista);
-        bWing = new Room(4, "BWing", "");
-        stock = new Room(5, "Stock", "", vaccineFirstDose);
-        cWing = new Room(6, "CWing", "", fakeNews);
-        bathroom = new Room(7, "Bathroom", "", alcoholGel);
-        corridorTwo = new Room(8, "CorridorTwo", "");
-        corridorThree = new Room(9, "CorridorThree", "");
-        infirmary = new Room(10, "Infirmary", "", vaccineSecondDose);
-        laboratory = new Room(11, "Laboratory", "", virus);
+        reception = new Room(0, "Reception", "This is the reception area of the hospital. It is the first room in the building.");
+        aWing = new Room(1, "AWing", "This is the hospital's A-wing.");
+        pharmacy = new Room(2, "Pharmacy", "This is the pharmacy of the hospital. Here are all the medicines.", mask);
+        corridorOne = new Room(3, "CorridorOne", "This is corridor one of the hospital.", bolsonarista);
+        bWing = new Room(4, "BWing", "Ward that was intended for patients with internal fractures.");
+        stock = new Room(5, "Stock", "Room where medical supplies were stored.", vaccineFirstDose);
+        cWing = new Room(6, "CWing", "Ward that was intended for patients with contagious diseases.", fakeNews);
+        bathroom = new Room(7, "Bathroom", "Hospital main abandoned toilet.", alcoholGel);
+        corridorTwo = new Room(8, "CorridorTwo", "This is corridor 2 of the hospital, a long, narrow place, a little dark, but nothing unusual.");
+        corridorThree = new Room(9, "CorridorThree", "This is corridor 3, the last corridor of the hospital, you feel something when you enter it, but nothing happens.");
+        infirmary = new Room(10, "Infirmary", "This is the hospital ward. Here are all the strongest medications in the hospital.", vaccineSecondDose);
+        laboratory = new Room(11, "Laboratory", "Abandoned laboratory where doctors performed tests.", virus);
         exit = new Room(12, "Exit", "");
 
         reception.setExit("north", aWing);

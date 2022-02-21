@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class Interface {
 
     public static void welcome() {
-        System.out.print(" ----Welcome to you-are-the-legend! ----\n");
-        System.out.println("---- You-are-the-legend is adventure game. ---- \n");
+        System.out.print(" ----Welcome to You are the legend! ----\n");
+        System.out.println("---- You are the legend is adventure game. ---- \n");
     }
 
     public static Scanner menu(){
@@ -126,7 +126,7 @@ public class Interface {
 
     public static void findItem(String currentRoomName, String item) {
         System.out.println(
-                "After you enter the " +
+                "\nAfter you enter the " +
                 currentRoomName +
                 " you found the following item " + item
         );
