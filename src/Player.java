@@ -14,7 +14,7 @@ public class Player extends Mob {
         items.add(item);
     }
 
-    private String returnItens() {
+    private String returnItems() {
         StringBuilder itemsString = new StringBuilder();
         for (Item item : items) {
             itemsString.append("[").append(item.getName()).append("] ");
@@ -27,6 +27,6 @@ public class Player extends Mob {
         return "Nome: " + super.getName() +
                 "\nForce: " + super.getForce() +
                 "\nLife: " + super.getLife() +
-                "\nItems: " + returnItens();
+                "\nItems: " + returnItems();
     }
 }

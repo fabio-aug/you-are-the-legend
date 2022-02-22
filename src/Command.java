@@ -10,17 +10,5 @@ public class Command {
     public String getCommandWord() {
         return firstWord;
     }
-
-    public String getSecondWord() {
-        return secondWord;
-    }
-
-    public boolean isUnknown() {
-        return (firstWord == null);
-    }
-
-    public boolean hasSecondWord() {
-        return (secondWord != null);
-    }
 }
 

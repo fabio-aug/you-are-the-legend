@@ -10,7 +10,7 @@ public class Game {
     public Game() {
         createPlayer();
         ArrayList<Item> listItem = createItems();
-        ArrayList<Mob> listEnemy = createEnemy();
+        ArrayList<Mob> listEnemy = createMob();
         createRooms(listItem, listEnemy);
     }
 
@@ -23,15 +23,15 @@ public class Game {
     private ArrayList<Item> createItems() {
         ArrayList<Item> items = new ArrayList<>();
 
-        items.add(new Item("Mask \uD83D\uDE37", "With the mask you feel safer", 10, 20));
-        items.add(new Item("Vaccine first dose \uD83D\uDC89", "A super powerful first dose of vaccine", 20, 30));
-        items.add(new Item("Vaccine second dose \uD83D\uDC89\uD83D\uDC89", "A super powerful second dose of vaccine", 25, 35));
-        items.add(new Item("Alcohol gel", "What a relief an alcohol gel", 15, 10));
+        items.add(new Item("Mask \uD83D\uDE37", 10, 20));
+        items.add(new Item("Vaccine first dose \uD83D\uDC89",  20, 30));
+        items.add(new Item("Vaccine second dose \uD83D\uDC89\uD83D\uDC89",  25, 35));
+        items.add(new Item("Alcohol gel", 15, 10));
 
         return items;
     }
 
-    private ArrayList<Mob> createEnemy() {
+    private ArrayList<Mob> createMob() {
         ArrayList<Mob> items = new ArrayList<>();
 
         items.add(new Mob("Bolsonarista 1️⃣7️⃣", "The famous anti-vaccine uncle.", 15, 55));
@@ -121,7 +121,6 @@ public class Game {
     }
 
     private boolean selectedCommand(int option) {
-        if (option == 0) return false;
         if (option == 1) Interface.help();
         if (option == 2) goRoom();
         if (option == 3) return Interface.quit();
@@ -156,7 +155,7 @@ public class Game {
 
     private void executeCombat() {
         Combat combat = new Combat(player, currentRoom.getEnemy());
-        combat = Combat.execute(combat);
+        combat = combat.execute();
 
         currentRoom.setEnemy(combat.getEnemy());
         listRoom.set(currentRoom.getId(), currentRoom);

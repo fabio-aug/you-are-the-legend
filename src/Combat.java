@@ -1,8 +1,8 @@
 import java.util.Random;
 
 public class Combat {
-    private Player player;
-    private final Mob enemy;
+    private static Player player;
+    private static Mob enemy;
 
     public Combat(Player player, Mob enemy) {
         this.player = player;
@@ -17,40 +17,37 @@ public class Combat {
         return player;
     }
 
-    public static Combat execute(Combat combat) {
-        Player player = combat.getPlayer();
-        Mob enemy = combat.getEnemy();
-
+    public static Combat execute() {
         Random random = new Random();
         Interface.nameEnemy(enemy.toString());
 
         while (player.getLife() > 0 && enemy.getLife() > 0) {
             if (random.nextBoolean()) {
                 player.setLife(calculateDamage(enemy.getForce(), player.getLife()));
-                if (player.getLife() == 0) break;
                 showMessageCombat("enemy");
+                if (player.getLife() <= 0) break;
             } else {
                 Interface.missAttack(true);
             }
 
             if (random.nextBoolean()) {
                 enemy.setLife(calculateDamage(player.getForce(), enemy.getLife()));
-                if (enemy.getLife() == 0) break;
                 showMessageCombat("player");
+                if (enemy.getLife() <= 0) break;
             } else {
                 Interface.missAttack(false);
             }
         }
 
-        if (combat.getEnemy().getLife() <= 0 && combat.getEnemy().getName().equals("Omicron \uD83E\uDDA0")) {
+        if (enemy.getLife() <= 0 && enemy.getName().equals("Omicron \uD83E\uDDA0")) {
             Interface.youWin(player.toString());
-        } else if (combat.getEnemy().getLife() <= 0) {
-            return new Combat(combat.getPlayer(), null);
+        } else if (enemy.getLife() <= 0) {
+            return new Combat(player, null);
         }
 
-        combat.getPlayer().setLife(0);
+        player.setLife(0);
         Interface.youLose();
-        return new Combat(combat.getPlayer(), combat.getEnemy());
+        return new Combat(player, enemy);
     }
 
     private static int calculateDamage(int force, int life) {

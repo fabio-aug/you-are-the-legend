@@ -2,6 +2,9 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Interface {
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_BLUE = "\u001B[34m";
 
     public static void welcome() {
         System.out.print(" ----Welcome to You are the legend! ----\n");
@@ -79,41 +82,41 @@ public class Interface {
 
     public static void phrase1(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("\uD83D\uDDE1️ The enemy is attacking you");
+            System.out.println(ANSI_BLUE + "\uD83D\uDDE1️Your attack hit the enemy" + ANSI_RESET);
         } else {
-            System.out.println("\uD83D\uDDE1️ Your attack hit the enemy");
+            System.out.println(ANSI_RED + "\uD83D\uDDE1️ The enemy is attacking you" + ANSI_RESET);
         }
     }
 
     public static void phrase2(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("\uD83D\uDDE1️ You are really hurt");
+            System.out.println(ANSI_BLUE + "\uD83D\uDDE1️ You are really hurt" + ANSI_RESET);
         } else {
-            System.out.println("\uD83D\uDDE1️ The enemy is really hurt");
+            System.out.println(ANSI_RED + "\uD83D\uDDE1️  The enemy is really hurt" + ANSI_RESET);
         }
     }
 
     public static void phrase3(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("\uD83D\uDDE1️ You are getting worse and tired");
+            System.out.println(ANSI_BLUE + "\uD83D\uDDE1️ You are getting worse and tired" + ANSI_RESET);
         } else {
-            System.out.println("\uD83D\uDDE1️ The enemy is getting worse and tired");
+            System.out.println(ANSI_RED + "\uD83D\uDDE1️ The enemy is getting worse and tired" + ANSI_RESET);
         }
     }
 
     public static void phrase4(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("\uD83D\uDDE1️ You need to react");
+            System.out.println(ANSI_BLUE + "\uD83D\uDDE1️ You need to react" + ANSI_RESET);
         } else {
-            System.out.println("\uD83D\uDDE1️ The enemy is not reacting");
+            System.out.println(ANSI_RED + "\uD83D\uDDE1️ The enemy is not reacting" + ANSI_RESET);
         }
     }
 
     public static void phrase5(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("\uD83D\uDDE1️ You are felling weak");
+            System.out.println(ANSI_BLUE + "\uD83D\uDDE1️ You are felling weak" + ANSI_RESET);
         } else {
-            System.out.println("\uD83D\uDDE1️ The enemy is getting weak");
+            System.out.println(ANSI_RED + "\uD83D\uDDE1️ The enemy is getting weak" + ANSI_RESET);
         }
     }
 
@@ -156,9 +159,9 @@ public class Interface {
 
     public static void missAttack(boolean isPlayer) {
         if (isPlayer) {
-            System.out.println("\uD83D\uDEE1️ You missed the attack");
+            System.out.println(ANSI_BLUE + "\uD83D\uDEE1️ You missed the attack" + ANSI_RESET);
         } else {
-            System.out.println("\uD83D\uDEE1️ The enemy missed the attack");
+            System.out.println(ANSI_RED + "\uD83D\uDEE1️ The enemy missed the attack" + ANSI_RESET);
         }
     }
 }
