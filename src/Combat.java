@@ -53,12 +53,8 @@ public class Combat {
 
     private static void showMessageCombat(String whoHit) {
         Random random = new Random();
-        int rand = random.nextInt(5) + 1;
+        int rand = random.nextInt(5);
 
-        if (rand == 1) Interface.phrase1(whoHit);
-        if (rand == 2) Interface.phrase2(whoHit);
-        if (rand == 3) Interface.phrase3(whoHit);
-        if (rand == 4) Interface.phrase4(whoHit);
-        if (rand == 5) Interface.phrase5(whoHit);
+        Interface.combatPhrase(whoHit, rand);
     }
 }

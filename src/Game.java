@@ -6,6 +6,7 @@ public class Game {
     private ArrayList<Room> listRoom;
     private Room currentRoom;
     private Player player;
+    private final int FINAL_ROOM = 11;
 
     public Game() {
         createPlayer();
@@ -26,22 +27,22 @@ public class Game {
         items.add(new Item("Mask \uD83D\uDE37", 10, 20));
         items.add(new Item("Vaccine first dose \uD83D\uDC89",  20, 30));
         items.add(new Item("Vaccine second dose \uD83D\uDC89\uD83D\uDC89",  25, 35));
-        items.add(new Item("Alcohol gel", 15, 10));
+        items.add(new Item("Alcohol gel \uD83E\uDDEA", 15, 10));
 
         return items;
     }
 
     private ArrayList<Mob> createMob() {
-        ArrayList<Mob> items = new ArrayList<>();
+        ArrayList<Mob> enemies = new ArrayList<>();
 
-        items.add(new Mob("Bolsonarista 1️⃣7️⃣", "The famous anti-vaccine uncle.", 15, 55));
-        items.add(new Mob("FakeNews \uD83D\uDCE8", "WhatsApp aunt attacked you. Will you believe?", 20, 80));
-        items.add(new Mob("Omicron \uD83E\uDDA0", "The omicron is heading your way.", 30, 250));
+        enemies.add(new Mob("Bolsonarista 1️⃣7️⃣", "The famous anti-vaccine uncle.", 15, 55));
+        enemies.add(new Mob("FakeNews \uD83D\uDCE8", "WhatsApp aunt attacked you. Will you believe?", 20, 80));
+        enemies.add(new Mob("Omicron \uD83E\uDDA0", "The omicron is heading your way.", 30, 250));
 
-        return items;
+        return enemies;
     }
 
-    private void createRooms(ArrayList<Item> items, ArrayList<Mob> enemys) {
+    private void createRooms(ArrayList<Item> items, ArrayList<Mob> enemies) {
         listRoom = new ArrayList<>();
 
         Room reception, aWing, pharmacy, corridorOne, bWing, stock, cWing, bathroom, corridorTwo, corridorThree, infirmary, laboratory;
@@ -49,15 +50,15 @@ public class Game {
         reception = new Room(0, "Reception", "This is the reception area of the hospital. It is the first room in the building.");
         aWing = new Room(1, "AWing", "This is the hospital's A-wing.");
         pharmacy = new Room(2, "Pharmacy", "This is the pharmacy of the hospital. Here are all the medicines.", items.get(0));
-        corridorOne = new Room(3, "CorridorOne", "This is corridor one of the hospital.", enemys.get(0));
+        corridorOne = new Room(3, "CorridorOne", "This is corridor one of the hospital.", enemies.get(0));
         bWing = new Room(4, "BWing", "Ward that was intended for patients with internal fractures.");
         stock = new Room(5, "Stock", "Room where medical supplies were stored.", items.get(1));
-        cWing = new Room(6, "CWing", "Ward that was intended for patients with contagious diseases.", enemys.get(1));
+        cWing = new Room(6, "CWing", "Ward that was intended for patients with contagious diseases.", enemies.get(1));
         bathroom = new Room(7, "Bathroom", "Hospital main abandoned toilet.", items.get(2));
         corridorTwo = new Room(8, "CorridorTwo", "This is corridor 2 of the hospital, a long, narrow place, a little dark, but nothing unusual.");
         corridorThree = new Room(9, "CorridorThree", "This is corridor 3, the last corridor of the hospital, you feel something when you enter it, but nothing happens.");
         infirmary = new Room(10, "Infirmary", "This is the hospital ward. Here are all the strongest medications in the hospital.", items.get(3));
-        laboratory = new Room(11, "Laboratory", "Abandoned laboratory where doctors performed tests.", enemys.get(2));
+        laboratory = new Room(11, "Laboratory", "Abandoned laboratory where doctors performed tests.", enemies.get(2));
 
         reception.setExit("north", aWing);
 
@@ -165,7 +166,7 @@ public class Game {
     private void verifyWinner(Combat combat) {
         if (combat.getEnemy() != null) {
             Interface.youLose(player.toString());
-        } else if (combat.getEnemy() == null && currentRoom.getId() == 11) {
+        } else if (combat.getEnemy() == null && currentRoom.getId() == FINAL_ROOM) {
             Interface.youWin(player.toString());
         }
     }
