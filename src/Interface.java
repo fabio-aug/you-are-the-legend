@@ -79,25 +79,25 @@ public class Interface {
 
     public static void phrase1(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("\uD83D\uDDE1️ You took one in the face");
+            System.out.println("\uD83D\uDDE1️ The enemy is attacking you");
         } else {
-            System.out.println("\uD83D\uDDE1️ Enemy took one in the face");
+            System.out.println("\uD83D\uDDE1️ Your attack hit the enemy");
         }
     }
 
     public static void phrase2(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("\uD83D\uDDE1️ You are not doing well");
+            System.out.println("\uD83D\uDDE1️ You are really hurt");
         } else {
-            System.out.println("\uD83D\uDDE1️ Enemy are not doing well");
+            System.out.println("\uD83D\uDDE1️ The enemy is really hurt");
         }
     }
 
     public static void phrase3(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("\uD83D\uDDE1️ You are worse than a stray dog");
+            System.out.println("\uD83D\uDDE1️ You are getting worse and tired");
         } else {
-            System.out.println("\uD83D\uDDE1️ Enemy are worse than a stray dog");
+            System.out.println("\uD83D\uDDE1️ The enemy is getting worse and tired");
         }
     }
 
@@ -105,15 +105,15 @@ public class Interface {
         if (whoHit.equals("player")) {
             System.out.println("\uD83D\uDDE1️ You need to react");
         } else {
-            System.out.println("\uD83D\uDDE1️ Enemy is not reacting");
+            System.out.println("\uD83D\uDDE1️ The enemy is not reacting");
         }
     }
 
     public static void phrase5(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("\uD83D\uDDE1️ Your Ki is weak");
+            System.out.println("\uD83D\uDDE1️ You are felling weak");
         } else {
-            System.out.println("\uD83D\uDDE1️ Enemy's Ki is weak");
+            System.out.println("\uD83D\uDDE1️ The enemy is getting weak");
         }
     }
 
