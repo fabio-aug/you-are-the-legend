@@ -121,18 +121,23 @@ public class Interface {
     }
 
     public static void youWin(String player) {
-        showPlayerAfterItem(player);
+        showPlayer(player);
         System.out.print("\n✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨");
         System.out.print("\n✨ Congratulations! You beat Covid! ✨\n");
         System.out.print("✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨\n\n");
         thanks();
     }
 
-    public static void youLose() {
+    public static void youLose(String player) {
+        showPlayer(player);
         System.out.print("\n\uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80");
         System.out.print("\n\uD83D\uDC80 You lose the game! \uD83D\uDC80\n");
         System.out.print("\uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80\n");
         thanks();
+    }
+
+    public static void showPlayer(String player) {
+        System.out.println(player);
     }
 
     public static void findItem(String currentRoomName, String item) {

@@ -27,7 +27,7 @@ public class Combat {
                 showMessageCombat("enemy");
                 if (player.getLife() <= 0) break;
             } else {
-                Interface.missAttack(true);
+                Interface.missAttack(false);
             }
 
             if (random.nextBoolean()) {
@@ -35,19 +35,16 @@ public class Combat {
                 showMessageCombat("player");
                 if (enemy.getLife() <= 0) break;
             } else {
-                Interface.missAttack(false);
+                Interface.missAttack(true);
             }
         }
 
-        if (enemy.getLife() <= 0 && enemy.getName().equals("Omicron \uD83E\uDDA0")) {
-            Interface.youWin(player.toString());
-        } else if (enemy.getLife() <= 0) {
+        if (enemy.getLife() <= 0) {
             return new Combat(player, null);
+        } else {
+            player.setLife(0);
+            return new Combat(player, enemy);
         }
-
-        player.setLife(0);
-        Interface.youLose();
-        return new Combat(player, enemy);
     }
 
     private static int calculateDamage(int force, int life) {

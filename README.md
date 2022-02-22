@@ -1,4 +1,4 @@
-# you-are-the-legend 💉🦠🌎
+# You are the legend 💉🦠🌎
 Hello, here you will find the main information about this project! We hope you have fun and be a hero everyday. Take care of yourself and everybody that you love. We're in this fight together.
 
 >## 👾 About the game 👾

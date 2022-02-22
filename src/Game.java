@@ -35,8 +35,8 @@ public class Game {
         ArrayList<Mob> items = new ArrayList<>();
 
         items.add(new Mob("Bolsonarista 1️⃣7️⃣", "The famous anti-vaccine uncle.", 15, 55));
-        items.add(new Mob("Omicron \uD83E\uDDA0", "The omicron is heading your way.", 30, 250));
         items.add(new Mob("FakeNews \uD83D\uDCE8", "WhatsApp aunt attacked you. Will you believe?", 20, 80));
+        items.add(new Mob("Omicron \uD83E\uDDA0", "The omicron is heading your way.", 30, 250));
 
         return items;
     }
@@ -44,7 +44,7 @@ public class Game {
     private void createRooms(ArrayList<Item> items, ArrayList<Mob> enemys) {
         listRoom = new ArrayList<>();
 
-        Room exit, reception, aWing, pharmacy, corridorOne, bWing, stock, cWing, bathroom, corridorTwo, corridorThree, infirmary, laboratory;
+        Room reception, aWing, pharmacy, corridorOne, bWing, stock, cWing, bathroom, corridorTwo, corridorThree, infirmary, laboratory;
 
         reception = new Room(0, "Reception", "This is the reception area of the hospital. It is the first room in the building.");
         aWing = new Room(1, "AWing", "This is the hospital's A-wing.");
@@ -58,7 +58,6 @@ public class Game {
         corridorThree = new Room(9, "CorridorThree", "This is corridor 3, the last corridor of the hospital, you feel something when you enter it, but nothing happens.");
         infirmary = new Room(10, "Infirmary", "This is the hospital ward. Here are all the strongest medications in the hospital.", items.get(3));
         laboratory = new Room(11, "Laboratory", "Abandoned laboratory where doctors performed tests.", enemys.get(2));
-        exit = new Room(12, "Exit", "");
 
         reception.setExit("north", aWing);
 
@@ -93,7 +92,6 @@ public class Game {
         infirmary.setExit("west", corridorThree);
 
         laboratory.setExit("south", corridorThree);
-        laboratory.setExit("west", exit);
 
         listRoom.add(reception);
         listRoom.add(aWing);
@@ -160,7 +158,16 @@ public class Game {
         currentRoom.setEnemy(combat.getEnemy());
         listRoom.set(currentRoom.getId(), currentRoom);
         player = combat.getPlayer();
+        verifyWinner(combat);
         Interface.showPlayerAfterCombat(player.toString());
+    }
+
+    private void verifyWinner(Combat combat) {
+        if (combat.getEnemy() != null) {
+            Interface.youLose(player.toString());
+        } else if (combat.getEnemy() == null && currentRoom.getId() == 11) {
+            Interface.youWin(player.toString());
+        }
     }
 
     private boolean checkItemRoom() {
