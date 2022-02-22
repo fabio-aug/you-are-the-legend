@@ -79,41 +79,41 @@ public class Interface {
 
     public static void phrase1(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("⚔️You took one in the face");
+            System.out.println("\uD83D\uDDE1️ You took one in the face");
         } else {
-            System.out.println("⚔️Enemy took one in the face");
+            System.out.println("\uD83D\uDDE1️ Enemy took one in the face");
         }
     }
 
     public static void phrase2(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("⚔️You are not doing well");
+            System.out.println("\uD83D\uDDE1️ You are not doing well");
         } else {
-            System.out.println("⚔️Enemy are not doing well");
+            System.out.println("\uD83D\uDDE1️ Enemy are not doing well");
         }
     }
 
     public static void phrase3(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("⚔️You are worse than a stray dog");
+            System.out.println("\uD83D\uDDE1️ You are worse than a stray dog");
         } else {
-            System.out.println("⚔️Enemy are worse than a stray dog");
+            System.out.println("\uD83D\uDDE1️ Enemy are worse than a stray dog");
         }
     }
 
     public static void phrase4(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("⚔️You need to react");
+            System.out.println("\uD83D\uDDE1️ You need to react");
         } else {
-            System.out.println("⚔️Enemy is not reacting");
+            System.out.println("\uD83D\uDDE1️ Enemy is not reacting");
         }
     }
 
     public static void phrase5(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("⚔️Your Ki is weak");
+            System.out.println("\uD83D\uDDE1️ Your Ki is weak");
         } else {
-            System.out.println("⚔️Enemy's Ki is weak");
+            System.out.println("\uD83D\uDDE1️ Enemy's Ki is weak");
         }
     }
 
@@ -156,9 +156,9 @@ public class Interface {
 
     public static void missAttack(boolean isPlayer) {
         if (isPlayer) {
-            System.out.println("\uD83D\uDEE1️️You missed the attack");
+            System.out.println("\uD83D\uDEE1️ You missed the attack");
         } else {
-            System.out.println("\uD83D\uDEE1️️The enemy missed the attack");
+            System.out.println("\uD83D\uDEE1️ The enemy missed the attack");
         }
     }
 }

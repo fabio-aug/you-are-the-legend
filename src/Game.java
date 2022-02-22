@@ -21,9 +21,9 @@ public class Game {
     private void createRooms() {
         listRoom = new ArrayList<>();
 
-        Item mask = new Item("Mask \uD83D\uDC89", "With the mask you feel safer", 10, 20);
-        Item vaccineFirstDose = new Item("Vaccine first dose ", "A super powerful first dose of vaccine", 20, 30);
-        Item vaccineSecondDose = new Item("Vaccine second dose", "A super powerful second dose of vaccine", 25, 35);
+        Item mask = new Item("Mask \uD83D\uDE37", "With the mask you feel safer", 10, 20);
+        Item vaccineFirstDose = new Item("Vaccine first dose \uD83D\uDC89", "A super powerful first dose of vaccine", 20, 30);
+        Item vaccineSecondDose = new Item("Vaccine second dose \uD83D\uDC89\uD83D\uDC89", "A super powerful second dose of vaccine", 25, 35);
         Item alcoholGel = new Item("Alcohol gel", "What a relief an alcohol gel", 15, 10);
 
         Mob bolsonarista = new Mob("Bolsonarista 1️⃣7️⃣", "The famous anti-vaccine uncle.", 15, 55);
