@@ -21,3 +21,10 @@ face the challenges and, in the end , face the biggest enemy of this pandemic. *
 >- Rodrigo Cardoso *(0039823)*;
 >- Vinicius Dalcantoni Horta Barbosa *(0066096)*;
 >- Weverton Ryan Ribeiro da Mata *(0039819)*.
+
+---
+
+## Map of the game
+This layout is just for the player to orient himself.
+
+![Map game](./src/img/mapGame.png "Map game")
