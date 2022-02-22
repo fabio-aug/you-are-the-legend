@@ -79,25 +79,25 @@ public class Interface {
 
     public static void phrase1(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("⚔️You took one in the face");
+            System.out.println("⚔️The enemy is attacking you");
         } else {
-            System.out.println("⚔️Enemy took one in the face");
+            System.out.println("⚔️Your attack hit the enemy");
         }
     }
 
     public static void phrase2(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("⚔️You are not doing well");
+            System.out.println("⚔️You are really hurt");
         } else {
-            System.out.println("⚔️Enemy are not doing well");
+            System.out.println("⚔️The enemy is really hurt");
         }
     }
 
     public static void phrase3(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("⚔️You are worse than a stray dog");
+            System.out.println("⚔️You are getting worse and tired");
         } else {
-            System.out.println("⚔️Enemy are worse than a stray dog");
+            System.out.println("⚔️The enemy is getting worse and tired");
         }
     }
 
@@ -105,15 +105,15 @@ public class Interface {
         if (whoHit.equals("player")) {
             System.out.println("⚔️You need to react");
         } else {
-            System.out.println("⚔️Enemy is not reacting");
+            System.out.println("⚔️The enemy is not reacting");
         }
     }
 
     public static void phrase5(String whoHit) {
         if (whoHit.equals("player")) {
-            System.out.println("⚔️Your Kee is weak");
+            System.out.println("⚔️You are felling weak");
         } else {
-            System.out.println("⚔️Enemy's Kee is weak");
+            System.out.println("⚔️The enemy is getting weak");
         }
     }
 
